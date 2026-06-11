@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Straightway Transportation — Mission-Grade Medical Transport</title>
+<meta name="description" content="Straightway Transportation: door-through-door non-emergency medical transportation. New Jersey headquarters. International chapters in Mexico, the Dominican Republic, and Cabo Verde.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0b1320;
+    --navy-2: #101a2b;
+    --navy-3: #16233a;
+    --brass: #b9974e;
+    --brass-bright: #d4b06a;
+    --ivory: #f4f1ea;
+    --steel: #8b97a8;
+    --line: rgba(185, 151, 78, 0.35);
+    --max: 1120px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--navy);
+    color: var(--ivory);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  /* ── Top bar ───────────────────────────── */
+  .topbar {
+    border-bottom: 1px solid var(--line);
+    background: rgba(11, 19, 32, 0.92);
+    backdrop-filter: blur(10px);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .topbar .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .mark {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: var(--ivory);
+  }
+  .mark .chevron {
+    width: 28px; height: 28px; flex: none;
+  }
+  .mark .name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; font-size: 0.95rem; letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .mark .name span { color: var(--brass); }
+  nav.menu { display: flex; gap: 28px; }
+  nav.menu a {
+    color: var(--steel); text-decoration: none;
+    font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 500; transition: color .2s;
+  }
+  nav.menu a:hover { color: var(--brass-bright); }
+  @media (max-width: 760px) { nav.menu { display: none; } }
+
+  /* ── Hero ─────────────────────────────── */
+  .hero {
+    position: relative;
+    padding: 120px 0 100px;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(11,19,32,0) 0%, var(--navy) 95%),
+      repeating-linear-gradient(90deg, rgba(185,151,78,0.05) 0 1px, transparent 1px 80px),
+      repeating-linear-gradient(0deg, rgba(185,151,78,0.05) 0 1px, transparent 1px 80px),
+      radial-gradient(ellipse 90% 60% at 50% -10%, #1c2c47 0%, var(--navy) 70%);
+  }
+  .hero .kicker {
+    display: inline-flex; align-items: center; gap: 14px;
+    color: var(--brass); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .hero .kicker::before, .hero .kicker::after {
+    content: ""; height: 1px; width: 42px; background: var(--brass);
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    line-height: 1.08;
+    max-width: 18ch;
+  }
+  .hero h1 em { font-style: normal; color: var(--brass-bright); }
+  .hero p.lead {
+    margin-top: 26px; max-width: 60ch;
+    font-size: 1.08rem; color: #c8cfda;
+  }
+  .hero p.lead-es {
+    margin-top: 10px; max-width: 60ch;
+    font-size: 0.92rem; color: var(--steel); font-style: italic;
+  }
+  .hero .cta-row { margin-top: 42px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; text-decoration: none;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 15px 32px; transition: all .2s;
+  }
+  .btn-solid { background: var(--brass); color: var(--navy); }
+  .btn-solid:hover { background: var(--brass-bright); }
+  .btn-ghost { border: 1px solid var(--line); color: var(--ivory); }
+  .btn-ghost:hover { border-color: var(--brass); color: var(--brass-bright); }
+
+  /* ── Values band ──────────────────────── */
+  .values {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--navy-2);
+  }
+  .values .wrap {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+  }
+  .values .v {
+    padding: 30px 20px; text-align: center;
+    border-left: 1px solid rgba(185,151,78,0.15);
+  }
+  .values .v:first-child { border-left: none; }
+  .values .v b {
+    display: block; font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.28em; text-transform: uppercase; color: var(--brass-bright);
+  }
+  .values .v span { font-size: 0.78rem; color: var(--steel); }
+  @media (max-width: 760px) {
+    .values .wrap { grid-template-columns: repeat(2, 1fr); }
+    .values .v:nth-child(3) { border-left: none; }
+  }
+
+  /* ── Sections ─────────────────────────── */
+  section.block { padding: 96px 0; }
+  section.block.alt { background: var(--navy-2); border-top: 1px solid rgba(185,151,78,0.12); border-bottom: 1px solid rgba(185,151,78,0.12); }
+  .sec-label {
+    color: var(--brass); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 14px; margin-bottom: 18px;
+  }
+  .sec-label::before { content: ""; height: 1px; width: 42px; background: var(--brass); }
+  h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
+    font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.15;
+    max-width: 24ch;
+  }
+  .sec-intro { margin-top: 18px; max-width: 64ch; color: #c8cfda; }
+
+  /* mission */
+  .mission-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: start; }
+  @media (max-width: 860px) { .mission-grid { grid-template-columns: 1fr; } }
+  .mission-quote {
+    border-left: 2px solid var(--brass);
+    padding: 8px 0 8px 28px; margin-top: 8px;
+  }
+  .mission-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem; line-height: 1.4; color: var(--ivory);
+  }
+  .mission-quote footer { margin-top: 14px; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--steel); }
+
+  /* services */
+  .cards { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(185,151,78,0.18); border: 1px solid rgba(185,151,78,0.18); }
+  @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
+  .card { background: var(--navy-2); padding: 40px 32px; }
+  section.alt .card { background: var(--navy-3); }
+  .card .num {
+    font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+    color: var(--brass); letter-spacing: 0.1em; margin-bottom: 18px; display: block;
+  }
+  .card h3 { font-weight: 600; font-size: 1.02rem; letter-spacing: 0.04em; margin-bottom: 12px; }
+  .card p { font-size: 0.9rem; color: #b6bfcc; }
+  .card ul { margin-top: 14px; list-style: none; }
+  .card ul li {
+    font-size: 0.85rem; color: #b6bfcc; padding: 6px 0 6px 20px; position: relative;
+  }
+  .card ul li::before {
+    content: "—"; position: absolute; left: 0; color: var(--brass);
+  }
+
+  /* standards / credentialing */
+  .standards { margin-top: 56px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 64px; }
+  @media (max-width: 760px) { .standards { grid-template-columns: 1fr; } }
+  .std { border-top: 1px solid var(--line); padding-top: 22px; }
+  .std b { display: block; font-size: 0.92rem; font-weight: 600; margin-bottom: 8px; letter-spacing: 0.04em; }
+  .std p { font-size: 0.88rem; color: #b6bfcc; }
+
+  /* international */
+  .posts { margin-top: 56px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(185,151,78,0.18); border: 1px solid rgba(185,151,78,0.18); }
+  @media (max-width: 860px) { .posts { grid-template-columns: repeat(2, 1fr); } }
+  .post { background: var(--navy-2); padding: 34px 26px; }
+  .post .code {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.3em;
+    color: var(--brass); text-transform: uppercase; display: block; margin-bottom: 10px;
+  }
+  .post h3 { font-weight: 600; font-size: 1.05rem; margin-bottom: 6px; }
+  .post p { font-size: 0.84rem; color: var(--steel); }
+  .post .status { margin-top: 16px; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; }
+  .post .status.live { color: #7fb98a; }
+  .post .status.forming { color: var(--steel); }
+
+  /* platform */
+  .plat-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: start; }
+  @media (max-width: 860px) { .plat-grid { grid-template-columns: 1fr; } }
+  .plat-list { margin-top: 8px; list-style: none; }
+  .plat-list li {
+    border-top: 1px solid rgba(185,151,78,0.18);
+    padding: 18px 0; display: grid; grid-template-columns: 200px 1fr; gap: 18px;
+  }
+  .plat-list li:last-child { border-bottom: 1px solid rgba(185,151,78,0.18); }
+  @media (max-width: 600px) { .plat-list li { grid-template-columns: 1fr; gap: 4px; } }
+  .plat-list b { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass-bright); }
+  .plat-list span { font-size: 0.88rem; color: #b6bfcc; }
+
+  /* contact */
+  .contact-box {
+    margin-top: 48px; border: 1px solid var(--line);
+    padding: 56px 48px; text-align: center;
+    background:
+      repeating-linear-gradient(90deg, rgba(185,151,78,0.04) 0 1px, transparent 1px 80px),
+      var(--navy-2);
+  }
+  .contact-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 600; }
+  .contact-box p { margin-top: 12px; color: var(--steel); font-size: 0.92rem; }
+  .contact-box .btn { margin-top: 28px; }
+
+  /* footer */
+  footer.site {
+    border-top: 1px solid var(--line); padding: 48px 0; background: var(--navy);
+  }
+  footer.site .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; }
+  footer.site .fine { font-size: 0.74rem; color: var(--steel); letter-spacing: 0.06em; line-height: 1.9; }
+  footer.site .fine b { color: #c8cfda; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="#top">
+      <svg class="chevron" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <path d="M2 11 L14 3 L26 11" stroke="#b9974e" stroke-width="2.4" fill="none"/>
+        <path d="M2 18 L14 10 L26 18" stroke="#b9974e" stroke-width="2.4" fill="none" opacity="0.65"/>
+        <path d="M2 25 L14 17 L26 25" stroke="#b9974e" stroke-width="2.4" fill="none" opacity="0.35"/>
+      </svg>
+      <span class="name">Straightway <span>Transportation</span></span>
+    </a>
+    <nav class="menu">
+      <a href="#mission">Mission</a>
+      <a href="#services">Services</a>
+      <a href="#standards">Standards</a>
+      <a href="#network">Network</a>
+      <a href="#platform">Platform</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="kicker">Non-Emergency Medical Transportation</span>
+      <h1>Mission-grade transport.<br><em>Door through door,</em> every time.</h1>
+      <p class="lead">
+        Straightway Transportation moves people who depend on the ride — dialysis patients,
+        elders, and members who need a steady hand from their front door to the clinic door.
+        Headquartered in New Jersey. Built on discipline, dignity, and showing up.
+      </p>
+      <p class="lead-es">
+        Transporte médico con disciplina y dignidad — de puerta a puerta, siempre.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="#contact">Request Transport</a>
+        <a class="btn btn-ghost" href="#network">Our Network</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES BAND -->
+  <div class="values">
+    <div class="wrap">
+      <div class="v"><b>Dignity</b><span>Every rider, every ride</span></div>
+      <div class="v"><b>Discipline</b><span>Credentialed. Audited. On time.</span></div>
+      <div class="v"><b>Reliability</b><span>The ride that shows up</span></div>
+      <div class="v"><b>Service</b><span>Four countries, one standard</span></div>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <section class="block" id="mission">
+    <div class="wrap mission-grid">
+      <div>
+        <div class="sec-label">Why We Exist</div>
+        <h2>Founded for one rider. Run for thousands.</h2>
+        <p class="sec-intro">
+          Straightway began with a single need inside our own family: a grandmother who
+          deserved more than a ride — she deserved an escort. Someone trained, trusted, and
+          patient enough to walk her from her door, through the lobby, to the chair, and home
+          again. We built that service because it didn't exist. Then we built a company
+          around it.
+        </p>
+        <p class="sec-intro">
+          Today we serve managed-care members across New Jersey as a contracted
+          transportation provider, with a focus on the riders who need us most:
+          recurring dialysis patients on standing schedules, ambulatory riders, and
+          door-to-door assist members who need a driver who gets out of the vehicle.
+        </p>
+      </div>
+      <blockquote class="mission-quote">
+        <p>
+          “The mission is simple to say and hard to do: treat every rider like she is
+          your own grandmother — and be exactly on time.”
+        </p>
+        <footer>Straightway Founding Principle</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="block alt" id="services">
+    <div class="wrap">
+      <div class="sec-label">Capabilities</div>
+      <h2>Three lines of service. One standard of care.</h2>
+      <div class="cards">
+        <div class="card">
+          <span class="num">01</span>
+          <h3>Managed-Care NEMT</h3>
+          <p>Contracted non-emergency medical transportation for health-plan members in New Jersey — scheduled trips, recurring standing orders, and same-day coverage.</p>
+          <ul>
+            <li>Ambulatory (A) service</li>
+            <li>Door-to-door assist (AMAV) — the driver walks with you</li>
+            <li>Standing-order dialysis routes, A-leg and B-leg</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="num">02</span>
+          <h3>Dialysis Operations</h3>
+          <p>Renal transport is our core discipline. Fixed crews, fixed routes, fixed windows — because a missed dialysis run is not a missed appointment, it's a medical event.</p>
+          <ul>
+            <li>Facility partnerships with dialysis centers</li>
+            <li>Repeat-rider rosters per facility</li>
+            <li>Return-trip (will-call) coverage</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="num">03</span>
+          <h3>Private White-Glove</h3>
+          <p>Attended, door-through-door medical transport for families who want a higher standard: care-trained drivers under confidentiality, a premium fleet matched to the rider's need.</p>
+          <ul>
+            <li>Attended escort, curb never the endpoint</li>
+            <li>Care-trained, background-cleared chauffeurs</li>
+            <li>Discreet service under NDA</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDARDS -->
+  <section class="block" id="standards">
+    <div class="wrap">
+      <div class="sec-label">Standards &amp; Credentialing</div>
+      <h2>No clearance, no wheel.</h2>
+      <p class="sec-intro">
+        We run Straightway like a unit. Every driver is credentialed before dispatch and
+        re-verified continuously — and our systems enforce it automatically. A driver who
+        falls out of compliance cannot log in, cannot be dispatched, and cannot be paid.
+      </p>
+      <div class="standards">
+        <div class="std">
+          <b>Credentialed Drivers</b>
+          <p>Background checks, fingerprinting, drug screening, and jurisdiction-specific clearance for every driver in every market — synced to dispatch twice daily.</p>
+        </div>
+        <div class="std">
+          <b>Verified Identity</b>
+          <p>Document-verified driver and rider identity in every chapter, using each jurisdiction's national standard.</p>
+        </div>
+        <div class="std">
+          <b>Privacy by Design</b>
+          <p>Rider health information is separated by jurisdiction, encrypted in backup, and never shared across markets. HIPAA-clean communications are standard procedure.</p>
+        </div>
+        <div class="std">
+          <b>Audited Daily</b>
+          <p>Every trip we run is reconciled against source records every day — mileage, level of service, and payment — so nothing is missed and nothing is misreported.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NETWORK / INTERNATIONAL -->
+  <section class="block alt" id="network">
+    <div class="wrap">
+      <div class="sec-label">International Network</div>
+      <h2>One standard. Four flags.</h2>
+      <p class="sec-intro">
+        Straightway is built as a network of national chapters, each operating under local
+        rules with shared discipline: separated data, local credentialing, local payment
+        rails, and the same rider-first doctrine everywhere.
+      </p>
+      <div class="posts">
+        <div class="post">
+          <span class="code">US-NJ</span>
+          <h3>New Jersey</h3>
+          <p>Headquarters. Contracted managed-care NEMT, dialysis operations, private white-glove service.</p>
+          <div class="status live">● Operational</div>
+        </div>
+        <div class="post">
+          <span class="code">DO-SDQ</span>
+          <h3>Dominican Republic</h3>
+          <p>Santo Domingo chapter. Dialysis-first facility intake with national-ID verified rider registry.</p>
+          <div class="status forming">○ Standing Up</div>
+        </div>
+        <div class="post">
+          <span class="code">MX</span>
+          <h3>Mexico</h3>
+          <p>Chapter in formation. Team intake and operations groundwork underway.</p>
+          <div class="status forming">○ Standing Up</div>
+        </div>
+        <div class="post">
+          <span class="code">CV</span>
+          <h3>Cabo Verde</h3>
+          <p>Chapter in formation. Team intake and operations groundwork underway.</p>
+          <div class="status forming">○ Standing Up</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM -->
+  <section class="block" id="platform">
+    <div class="wrap plat-grid">
+      <div>
+        <div class="sec-label">The Platform</div>
+        <h2>A provider, in a box.</h2>
+        <p class="sec-intro">
+          We didn't buy our operations software — we built it, trip by trip, on real routes
+          with real riders. The Straightway Network platform runs our dispatch, and it's
+          being engineered so any transportation provider, in any jurisdiction, can one day
+          run on it.
+        </p>
+      </div>
+      <ul class="plat-list">
+        <li><b>Dispatch &amp; Tracking</b><span>Trip assignment to driver notification to live rider map and ETA — one motion.</span></li>
+        <li><b>Daily Trip Intake</b><span>Payer manifests imported, geolocated, and turned into dispatch-ready trip cards every morning.</span></li>
+        <li><b>Credential Gate</b><span>Compliance synced into dispatch — uncleared drivers are locked out automatically.</span></li>
+        <li><b>Revenue Integrity</b><span>Automated mileage and level-of-service audits with claims follow-through, every day.</span></li>
+        <li><b>Facility Coordination</b><span>Standing-order route planning and live rosters for partner dialysis centers.</span></li>
+        <li><b>Multi-Market Core</b><span>New country, new chapter: add data, not code. Local rules, shared doctrine.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="block alt" id="contact">
+    <div class="wrap">
+      <div class="sec-label">Contact</div>
+      <h2>Request transport. Partner with us. Join the unit.</h2>
+      <div class="contact-box">
+        <h3>Straightway Transportation</h3>
+        <p>
+          New Jersey, United States — serving managed-care members, dialysis facilities,
+          and private families.
+        </p>
+        <p>
+          Facilities &amp; partnerships · Driver candidates · Private white-glove inquiries
+        </p>
+        <a class="btn btn-solid" href="mailto:straightwaytrans@gmail.com">straightwaytrans@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fine">
+      <b>Straightway Transportation LLC</b> · A GADMATH LLC company<br>
+      New Jersey · Santo Domingo · Mexico · Cabo Verde
+    </div>
+    <div class="fine">
+      © 2026 Straightway Transportation. All rights reserved.<br>
+      Dignity. Discipline. Reliability. Service.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
