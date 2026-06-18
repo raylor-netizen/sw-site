@@ -26,6 +26,12 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
+  .skip-link {
+    position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+    background: var(--brass); color: var(--navy); font-weight: 600; padding: 10px 16px;
+    text-decoration: none; z-index: 200;
+  }
+  .skip-link:focus { left: 16px; top: 16px; width: auto; height: auto; }
   body {
     background: var(--navy);
     color: var(--ivory);
@@ -244,6 +250,7 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#top">Skip to content</a>
 
 <header class="topbar">
   <div class="wrap">
