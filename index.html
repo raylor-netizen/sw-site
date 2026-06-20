@@ -73,7 +73,22 @@
     font-weight: 500; transition: color .2s;
   }
   nav.menu a:hover { color: var(--brass-bright); }
-  @media (max-width: 760px) { nav.menu { display: none; } }
+  .menu-toggle {
+    display: none; background: none; border: 1px solid var(--line);
+    color: var(--brass-bright); padding: 8px 12px; font-size: 0.72rem;
+    letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer;
+  }
+  @media (max-width: 760px) {
+    .menu-toggle { display: inline-flex; }
+    nav.menu {
+      display: none; flex-direction: column; gap: 16px;
+      position: absolute; right: 24px; top: 64px;
+      background: var(--navy-2); border: 1px solid var(--line);
+      padding: 20px 24px; z-index: 20;
+    }
+    nav.menu.open { display: flex; }
+    header.topbar .wrap { position: relative; }
+  }
 
   /* ── Hero ─────────────────────────────── */
   .hero {
@@ -262,7 +277,8 @@
       </svg>
       <span class="name">Straightway <span>Transportation</span></span>
     </a>
-    <nav class="menu">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" onclick="document.getElementById('site-menu').classList.toggle('open'); this.setAttribute('aria-expanded', document.getElementById('site-menu').classList.contains('open'))">Menu</button>
+    <nav class="menu" id="site-menu">
       <a href="#mission">Mission</a>
       <a href="#services">Services</a>
       <a href="#standards">Standards</a>
