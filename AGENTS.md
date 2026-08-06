@@ -1,6 +1,6 @@
 # Straightway Site — agent context
 
-> **AI handoff doc** — read this first when working in `apps/straightway-site/`.
+> **AI handoff doc** — read this first when working in `apps/sw-site/`.
 > Network-wide rules: [`~/Straightway-Network/CLAUDE.md`](../../CLAUDE.md) · orchestration: [`AGENTS.md`](../../AGENTS.md) · change log: [`docs/APP-DOCS-CHANGELOG.md`](../../docs/APP-DOCS-CHANGELOG.md)
 
 ## What this app does
