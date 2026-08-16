@@ -1,0 +1,22 @@
+{
+  "$schema": "https://straightway.network/schemas/app-manifest.v1.json",
+  "app_id": "sw-site",
+  "name": "Sw Site",
+  "version": "2026.2.0",
+  "portfolio": "Corporate Growth & Legal",
+  "lifecycle": "Active static site",
+  "port": null,
+  "runtime": {
+    "engine": "Python 3.14+",
+    "target_architecture": "Apple Silicon (M5/M4/M3/M2/M1) & Linux x86_64/arm64",
+    "portable_root_env": "SW_NETWORK_ROOT",
+    "zero_trust_compliance": true
+  },
+  "health_check": {
+    "enabled": true,
+    "type": "cli_status",
+    "endpoint": "sw status"
+  },
+  "last_updated": "2026-08-14T19:15:00",
+  "update_summary": "Standardized 2026.2 fleet runtime manifest, verified cross-platform portability and zero-trust isolation."
+}
